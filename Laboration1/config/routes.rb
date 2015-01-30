@@ -9,8 +9,15 @@ Rails.application.routes.draw do
   #   get 'products/:id' => 'catalog#view'
   root :to => redirect('/login')
   get '/login' => 'login#index'
+  post '/login' => 'login#create'
+
   get '/register' => 'register#new'
   post '/users' => 'register#create'
+
+  get '/users' => 'users#index'
+  get '/delete' => 'users#destroy'
+  resources :users, only: [:show]
+  get '/logout' => 'login#destroy'
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
