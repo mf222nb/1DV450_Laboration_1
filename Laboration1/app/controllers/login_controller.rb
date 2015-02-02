@@ -5,7 +5,7 @@ class LoginController < ApplicationController
 
   def create
     #Hämtar ut användaren med ett visst email
-    user = User.find_by(email: params[:login][:email].downcase)
+    user = User.find_by(name: params[:login][:name].downcase)
 
     if user && user.authenticate(params[:login][:password])
 
