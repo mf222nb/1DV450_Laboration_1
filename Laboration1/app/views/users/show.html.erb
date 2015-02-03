@@ -1,6 +1,7 @@
 <% if current_user && @key %>
     <h3>API Key:</h3>
-    <%= link_to "Delete", @user, method: :delete %>
+    <%= @key.key %>
+    <%= link_to "Delete", @key.user, method: :delete %>
 
     <% elsif current_user.admin? %>
     <ul>
