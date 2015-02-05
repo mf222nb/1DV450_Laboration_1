@@ -5,6 +5,7 @@
 
     <% elsif current_user.admin? %>
     <ul>
+      <!-- Loopar igenom alla användare som har en nyckel -->
         <% @all_users.each do |i| %>
 
             <li><%= i.user.name %>, <%= i.key %><%= link_to "Delete", i.user, method: :delete %></li>

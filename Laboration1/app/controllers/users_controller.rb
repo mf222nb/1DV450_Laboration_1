@@ -3,12 +3,14 @@ class UsersController < ApplicationController
   before_action :check_user, only: [:show, :destroy]
   before_action :correct_user, only: [:show]
 
+  #Hämtar ut alla nycklar som har en användare och hämtar ut en enskild användare med en enskild nyckel
   def show
     @all_users = Key.all
     @key = Key.find_by_user_id(params[:id])
     @user = User.find(params[:id])
   end
 
+  #Tar bort en nyckel på en användare
   def destroy
     if Key.find_by_user_id(params[:id]).destroy
 
@@ -20,9 +22,10 @@ class UsersController < ApplicationController
     end
   end
 
+  #Skapar en ny nyckel på en användare
   def create
     key = Key.new
-    key.key = (0...20).map { (65 + rand(26)).chr }.join
+    key.key = SecureRandom.hex
     key.user = User.find(params[:id])
 
     if key.save
@@ -34,6 +37,7 @@ class UsersController < ApplicationController
     end
   end
 
+  #Tittar om det är rätt användare som är inne
   private
   def correct_user
     @user = User.find(params[:id])
