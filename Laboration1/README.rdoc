@@ -3,14 +3,6 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
 * Gems
 To install any missing gems you have to do bundle install in the terminal.
 
@@ -18,16 +10,10 @@ To install any missing gems you have to do bundle install in the terminal.
 In the terminal do rake db:mograte to get the necessary tables and after that do rake db:seed to get the admin
 user.
 
-* Database initialization
+*Installation
+1. När du öppnat applikationen så skriver du i terminalen bundle install för att få in gems du kanske missat.
+2. För att skapa databasen skriver du "rake db:migrate".
+3. För att få in en Admin användare skriver du "rake db:seed".
+4. Nu kan du köra igång applikationen.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Admins inloggningsuppgifter är Admin@admin.com och lösenord är password
