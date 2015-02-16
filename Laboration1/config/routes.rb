@@ -21,7 +21,6 @@ Rails.application.routes.draw do
   post '/users' => 'register#create'
   post '/users/:id' => 'users#create'
 
-  get '/users' => 'users#index'
   get '/delete' => 'users#destroy'
   resources :users, only: [:show, :destroy]
   get '/logout' => 'login#destroy'
